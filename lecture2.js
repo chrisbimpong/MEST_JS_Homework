@@ -1,12 +1,19 @@
 /*
  * 1. explain the special meaning of the following special characters
  \0 the null character
+ returns a null character
  \n new line
+ returns a new line
  \r carriage return
+ used to reset a device's position to the beginning of a line of text
  \v vertical tab
+ returns vertical tab
  \t
+ returns tab character
  \backspace
+ returns one space back to cursor
  \f form feed
+ A page breaking ASCII character
  */
 
 /*
@@ -14,6 +21,10 @@
  *  var arr1 = ['Sunday', 'Monday', 'Tuesday', 'Wednesday']
  *  var arr2 = ['Thursday', 'Friday', 'Saturday']
  */
+ var arr1 = ['Sunday', 'Monday', 'Tuesday', 'Wednesday']
+ var arr2 = ['Thursday', 'Friday', 'Saturday']
+ arr1.concat(arr2)
+
 
 /*
  *  3.Please combine those three array together as one array by only using concate() function once:
@@ -21,6 +32,10 @@
  *  var arr2 = ['Tuesday', 'Wednesday']
  *  var arr3 = ['Thursday', 'Friday', 'Saturday']
  */
+var arr1 = ['Sunday', 'Monday']
+var arr2 = ['Tuesday', 'Wednesday']
+var arr3 = ['Thursday', 'Friday', 'Saturday']
+arr1.concat(arr2,arr3)
 
 /*
  * 4. what is the result(output of following code):
@@ -28,6 +43,12 @@
  *    console.log(arr.sort());
  *    console.log(arr);
  */
+var arr = ['ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars'];
+console.log(arr.sort());
+["Enoch", "Todd", "Yaw", "ashwin", "jerry", "lars", "mike"]
+
+console.log(arr);
+["Enoch", "Todd", "Yaw", "ashwin", "jerry", "lars", "mike"]
 
 /*
  * 5. what is the result(output of following code):
@@ -36,18 +57,33 @@
  *    console.log(arr);
  */
 
+var arr = [1, 3, 'apple', 'orange', 'black', 'test', 2];
+console.log(arr.sort());
+Array [ 1, 2, 3, "apple", "black", "orange", "test" ]
+console.log(arr);
+Array [ 1, 2, 3, "apple", "black", "orange", "test" ]
 /*
  * 6. Please remove mike, jerry, adn Enoch from the following array by using slice
  *    var arr = ['ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars'];
  */
+var arr = ['ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars'];
+var sliced = arr.slice(0,2);
+var sliced1 = arr.slice(4,-2);
+var sliced2 = arr.slice(6);
 
+console.log(sliced + " " + sliced1 + " " + sliced2);
 /*
  * 7. what is the result(output of following code):
  *    var arr = ['ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars'];
  *    console.log(arr.slice(-3, -1));
  *    console.log(arr);
  */
+var arr = ['ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars'];
+console.log(arr.slice(-3, -1));
+console.log(arr);
 
+[ 'Yaw', 'Enoch' ]
+[ 'ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars' ]
 
 /*
  * 8. what is the result(output of following code):
@@ -56,12 +92,26 @@
  *    console.log(arr);
  */
 
+ var arr = ['ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars'];
+ console.log(arr.slice(2));
+ console.log(arr);
+
+[ 'mike', 'jerry', 'Yaw', 'Enoch', 'lars' ]
+[ 'ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars' ]
+
 /*
  * 9. what is the result(output of following code):
  *    var arr = ['ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars'];
  *    console.log(arr.slice(-2));
  *    console.log(arr);
  */
+
+var arr = ['ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars'];
+console.log(arr.slice(-2));
+console.log(arr);
+
+[ 'Enoch', 'lars' ]
+[ 'ashwin', 'Todd', 'mike', 'jerry', 'Yaw', 'Enoch', 'lars' ]
 
 /*
  * 10. convert the following function to function expression:
@@ -71,11 +121,20 @@
  *
  *   and invoke the function expression to caluate the result of 256 + 532
  */
+function addTwoNumber (num1, num2){
+ return num1 + num2;
+}
+
+console.log(addTwoNumber(256, 532));
+788
 
 /*
  * 11. create an immediately invoked function expression
  * store the iife within a variable and call it
  */
+(function addTwoNumber (num1, num2){
+ return num1 + num2;
+}());
 
 /*
  * 12. you have following objects:
@@ -127,6 +186,8 @@
  *
  *  use call methods on function expression to make this work.
  */
+
+
 
 /*
  * 14. We have a following string:
