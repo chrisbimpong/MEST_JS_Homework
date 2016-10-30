@@ -213,7 +213,24 @@ console.log(count.bind(number)());
  *  use call methods on function expression to make this work.
  */
 
+var person1 = {
+	firstName: 'ashwin',
+	lastName: 'Yaw'
+};
+ 
+var person2 = {
+	firstName: 'lars',
+	lastName: 'Mike'
+};
 
+function hello(greeting) {
+	console.log(greeting + ' ' + this.firstName + ' ' + this.lastName);
+};
+ 
+   // use call methods on function expression to make this work.
+
+hello.call(person1, "Hi");
+hello.call(person2, "Hi");
 
 /*
  * 14. We have a following string:
