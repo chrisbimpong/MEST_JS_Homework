@@ -154,7 +154,18 @@ console.log(addTwoNumber(256, 532));
  *    and lars
  */
 
+var person1 = {
+	name: 'ashwin'
+};
+var person2 = {
+	name: 'lars'
+};
+function namer() {
+	return this.name;
+}
 
+console.log(namer.bind(person1)());
+console.log(namer.bind(person2)());
 
 /*
  * 12. you have following object:
@@ -169,6 +180,19 @@ console.log(addTwoNumber(256, 532));
  *  a. what is the result when we invoke count()?
  *  b. use bind on function expression to make this work.
  */
+
+var number = {
+	x: 22,
+	y: 33
+};
+
+var count = function() {
+	console.log(this.x + this.y);
+}; 
+// a. what is the result when we invoke count()
+// b. use bind on function expression to make this work.
+console.log(count());
+console.log(count.bind(number)());
 
 /*
  * 13. you have following objects:
