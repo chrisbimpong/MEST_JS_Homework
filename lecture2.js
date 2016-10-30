@@ -154,6 +154,8 @@ console.log(addTwoNumber(256, 532));
  *    and lars
  */
 
+
+
 /*
  * 12. you have following object:
  *     var number = {
@@ -195,3 +197,14 @@ console.log(addTwoNumber(256, 532));
  *
  *     please write a function to change the first letter of every word to upper case.
  */
+function titleCase(str) {
+     str = str.toLowerCase().split(' ');                
+
+     for(var i = 0; i < str.length; i++){               
+          str[i] = str[i].split('');                    
+          str[i][0] = str[i][0].toUpperCase();          
+          str[i] = str[i].join('');                     
+     }
+     return str.join(' ');                              
+}
+console.log(titleCase('Training, mentoring, and investing in world-class tech entrepreneurs in Africa.'));
